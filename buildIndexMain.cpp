@@ -5,6 +5,7 @@
 #include <seqan/stream.h>
 #include <seqan/seq_io.h>
 
+#include "naiveFastSort.h"
 
 using seqan::CharString;
 using seqan::SeqFileIn;
