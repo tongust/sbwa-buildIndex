@@ -17,3 +17,6 @@ cd ../
 cp ./release/ZEBRA ./
 ./ZEBRA $mf1
 
+
+rm -rf ../backup/sbwa-buildIndex
+cp -a ../sbwa-buildIndex ../backup/
