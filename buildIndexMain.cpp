@@ -22,7 +22,7 @@ int main(int argc, char** argv) {
     sscanf(argv[1], "%s", a);
 
     print_paras(a);
-
+    naiveFastsort::test();
 
 
 
