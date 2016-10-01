@@ -142,14 +142,20 @@ namespace naiveFastsort
         srand (time(nullptr));
         using std::cout;
         using std::endl;
-                //  0123456789
-        char str[]="googol$";
-        unint xins[]={0,1,2,3,4,5,6,7,8,9,10};
-        unint NN =  strlen(str);
+        std::string mcin;
+        std::cin >> mcin;
+        mcin.push_back('$');
+        unint NN = mcin.size();
+        unint *xins1=new unint[mcin.size()];
+        for (size_t i = 0; i != NN; ++i)
+            xins1[i] = i;
         unint beg = 0, end = NN;
-        ssort1(&str[0], &xins[0], beg, end, 0, end);
-        for (int i = 0; i != NN; ++i)
-            cout << xins[i] << endl;
+        ssort1(&mcin[0], &xins1[0], beg, end, 0, end);
+        for (size_t i = 0; i != NN; ++i)
+            cout << xins1[i] << endl;
+
+        // delete
+        delete[] xins1;
     }
 }
 #endif

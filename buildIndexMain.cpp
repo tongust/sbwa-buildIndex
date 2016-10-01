@@ -1,9 +1,12 @@
 #include <iostream>
+#include <vector>
 #include <stdio.h>
 #include <seqan/basic.h>
 #include <seqan/sequence.h>
 #include <seqan/stream.h>
 #include <seqan/seq_io.h>
+
+#include <string>
 
 #include "naiveFastSort.h"
 
@@ -25,17 +28,18 @@ int main(int argc, char** argv) {
     naiveFastsort::test();
 
 
-
     CharString r1 = a;
     cout << r1 << endl;
     CharString seqFileName = a;
     StringSet<CharString> id;
-    Dna5String seq;
+    //Dna5String seq;
+    std::string seq;
+ //   char *seq = new char[0]
     SeqFileIn seqFileIn(seqan::toCString(seqFileName));
     seqan::readRecord(id, seq, seqFileIn);
-
-//    std::cout << id << '\t' << seq << '\n';
-    //cout << id << endl;    
+    std::cout<<seq.size() << endl;
+    //std::cout << seq << std::endl;
+    std::cout << sizeof(int) << std::endl;
     return 0;
 }
 void print_paras(char a[100])

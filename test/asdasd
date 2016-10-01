@@ -1,0 +1,10 @@
+total 52
+drwxrwxr-x 2 tongust tongust  4096 Oct  1 15:09 ./
+drwxrwxr-x 8 tongust tongust  4096 Oct  1 12:44 ../
+-rw-rw-r-- 1 tongust tongust     0 Oct  1 15:09 asdasd
+-rw-rw-r-- 1 tongust tongust   356 Oct  1 11:13 ckandrun.sh
+-rw-rw-r-- 1 tongust tongust  4518 Sep 30 23:25 <F5>
+-rwxrwxr-x 1 tongust tongust 14528 Oct  1 15:08 main*
+-rw-rw-r-- 1 tongust tongust   158 Sep 30 14:07 main.cpp
+-rw-rw-r-- 1 tongust tongust  4644 Oct  1 15:08 naiveFastSort.h
+-rw-rw-r-- 1 tongust tongust    63 Oct  1 11:12 run.sh
