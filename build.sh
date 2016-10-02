@@ -1,7 +1,7 @@
 if [ "$#" -ne 1 ];
 then
     echo "Usage: $0 <.fa>"
-    mf1=/home/tongust/Program/cpp/sbwt/sbwa-buildIndex/genomes/test1.fa
+    mf1=/home/tongust/Program/cpp/sbwt/sbwa-buildIndex/genomes/rand.fa
 else
     mf1=$1
 fi
@@ -18,5 +18,5 @@ cp ./release/ZEBRA ./
 ./ZEBRA $mf1
 
 
-rm -rf ../backup/sbwa-buildIndex
-cp -a ../sbwa-buildIndex ../backup/
+#rm -rf ../backup/sbwa-buildIndex
+#cp -a ../sbwa-buildIndex ../backup/

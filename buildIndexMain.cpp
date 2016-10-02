@@ -19,13 +19,13 @@ using std::cout;
 using std::endl;
 
 void print_paras(char []);
-
 int main(int argc, char** argv) {
     char a[100];
     sscanf(argv[1], "%s", a);
 
     print_paras(a);
     naiveFastsort::test();
+    return 0;
 
 
     CharString r1 = a;
@@ -37,10 +37,23 @@ int main(int argc, char** argv) {
  //   char *seq = new char[0]
     SeqFileIn seqFileIn(seqan::toCString(seqFileName));
     seqan::readRecord(id, seq, seqFileIn);
-    std::cout<<seq.size() << endl;
-    //std::cout << seq << std::endl;
-    std::cout << sizeof(int) << std::endl;
+    seq.push_back('$');
+    const char *dnas = seq.c_str();
+    auto size_seq = seq.size();
+    unint * xins = new unint[size_seq];
+    for (size_t i = 0; i != size_seq; ++i)
+        xins[i] = i;
+    unint beg = 0, end = size_seq;
+    naiveFastsort::ssort1(dnas, xins, beg, end, 0, end);
+    for (size_t i = 0; i != size_seq; ++i)
+        cout << xins[i]<<",";
+
+
+
+    delete[] xins;
     return 0;
+
+
 }
 void print_paras(char a[100])
 {

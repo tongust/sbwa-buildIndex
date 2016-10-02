@@ -24,5 +24,3 @@ if __name__ == '__main__':
     for i in stdin:
         t = i[0:-1:] + '$'
         res=  bwtIndex(t)
-#        for j in res:
-#            print j

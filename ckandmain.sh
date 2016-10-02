@@ -4,6 +4,7 @@ do
     sleep 1s
     nowINN=$(stat *.h *.cpp | grep Change)
     if [ "$nowINN" != "${preINN}" ];then
+        rm -rf ./ZEBRA
         tput reset
         echo "The filed has been changed"
         sh build.sh

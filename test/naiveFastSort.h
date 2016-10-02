@@ -32,7 +32,6 @@ namespace naiveFastsort
 #define i2c(i) ((i)>=len_x?'#':x[(i)])
 #define min(a, b) (a)>(b)?(b):(a)
 #define max(a, b) (a)<(b)?(b):(a)
-
 #define coutputXin(ap, N) {for (int i =0; i != (N);++i) cout << (ap)[i]<<"("<<char(i2c((xindex[i]+depth)))<<") ,";cout << endl;}
     inline 
     void vecswap(unint i, unint j, unint n,  unint *xindex)
