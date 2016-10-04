@@ -9,6 +9,8 @@
 #include <string>
 
 #include "naiveFastSort.h"
+#include "naiveBwt.h"
+#include "verification.h"
 
 using seqan::CharString;
 using seqan::SeqFileIn;
@@ -22,9 +24,9 @@ void print_paras(char []);
 int main(int argc, char** argv) {
     char a[100];
     sscanf(argv[1], "%s", a);
-
     print_paras(a);
-    naiveFastsort::test();
+    verifySBWA vsbwa;
+    vsbwa.testnaiveBwt(20, 9, 10);
     return 0;
 
 
@@ -47,12 +49,11 @@ int main(int argc, char** argv) {
     naiveFastsort::ssort1(dnas, xins, beg, end, 0, end);
     for (size_t i = 0; i != size_seq; ++i)
         cout << xins[i]<<",";
-
-
-
     delete[] xins;
-    return 0;
 
+
+
+    return 0;
 
 }
 void print_paras(char a[100])

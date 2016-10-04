@@ -12,6 +12,8 @@
 #include <map>
 using std::map;
 #include <iostream>
+#include <memory>
+using std::shared_ptr;
 #include <string.h>
 #include <algorithm>
 #include <iterator>
@@ -21,12 +23,15 @@ typedef unsigned int unint;
 #define MY_DEBUG_MSG 0
 using std::cout;
 using std::endl;
+
+
+
 namespace naiveFastsort
 {
 #define swap(beg, a) {auto tmpv = xindex[beg];\
         xindex[beg] = xindex[a];\
         xindex[a] = tmpv;}
-#define i2c(i) ((i)>=len_x?'#':x[(i)])
+#define i2c(i) ((i)>=len_x?'$':x[(i)])
 #define min(a, b) (a)>(b)?(b):(a)
 #define max(a, b) (a)<(b)?(b):(a)
 #define coutputXin(ap, N) {for (int i =0; i != (N);++i) cout << (ap)[i]<<"("<<char(i2c((xindex[i]+depth)))<<") ,";cout << endl;}
@@ -291,6 +296,7 @@ namespace naiveFastsort
         X[i_m] = num2base[c_n];
         return;
     };
+    void test1();
     void test()
     {
         srand (time(nullptr));
@@ -298,8 +304,8 @@ namespace naiveFastsort
         using std::endl;
         {
             //                 M  k   
-            const size_t N = 104857600;// the length of ref
-            const size_t N_p = 100;// the length of pattern
+            const size_t N = 8;// the length of ref
+            const size_t N_p = 2;// the length of pattern
             // generate the refence reads radnomly
             // and the paterns
             char *X = new char[N];
@@ -323,7 +329,7 @@ namespace naiveFastsort
             CalBigOC(SA, B, N, bigO, bigC);
             // print FM
 //            cout << "i\t" << "index\t" << "FM\n";
-            for (unint i = 0; i != 0; ++i)
+            for (unint i = 0; i != N; ++i)
             {
                 cout << i << "\t(" << SA[i] <<")\t";
                 for (unint j = 0; j != N; ++j)
@@ -353,6 +359,7 @@ namespace naiveFastsort
 
             }
             // delete
+            delete[] X;
             delete[] B;
             for (int i = 0; i != 4; ++i)
             {
@@ -360,6 +367,7 @@ namespace naiveFastsort
             }
             delete[] bigO;
             delete[] SA;
+
         }
 #ifdef max
 #undef max
