@@ -4,7 +4,7 @@ from sys import argv
 import time
 from random import randint
 def rotation(t):
-	""" Return list of rotations of input stringt """
+	""" Return list of rotations of input string """
 	tt = t*2
 	return [ tt[i:i+len(t)] for i in xrange(0, len(t))]
 
@@ -22,6 +22,5 @@ if __name__ == '__main__':
     for i in stdin:
         t = i[0:-1:] + '$'
         res =  bwtIndex(t)
-        print res
         for j in res:
             print j

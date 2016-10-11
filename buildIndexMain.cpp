@@ -11,6 +11,7 @@
 #include "naiveFastSort.h"
 #include "naiveBwt.h"
 #include "verification.h"
+#include "sBwt.h"
 
 using seqan::CharString;
 using seqan::SeqFileIn;
@@ -25,8 +26,9 @@ int main(int argc, char** argv) {
     char a[100];
     sscanf(argv[1], "%s", a);
     print_paras(a);
-    verifySBWA vsbwa;
-    vsbwa.testnaiveBwt(20, 9, 10);
+    testSBwt();
+//    verifySBWA vsbwa;
+//    vsbwa.testnaiveBwt(20, 9, 10);
     return 0;
 
 

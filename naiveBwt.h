@@ -1,6 +1,5 @@
 #ifndef NAIVEBWT_H
 #define NAIVEBWT_H
-
 #include <vector> // std::begin()
 #include <time.h> // time
 #include <stdlib.h> // srand, rand
@@ -57,6 +56,8 @@ public:
         }
         if (bigO)
             delete[] bigO;
+        if (B)
+            delete[] B;
     }
 public:
     void ssort1(const char *x, unint *xindex, unint beg, unint end, unint depth, const unint &len_x);
